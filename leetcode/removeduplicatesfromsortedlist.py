@@ -10,18 +10,19 @@ class Solution(object):
         next_index = 1
         index = 0
         while index < len(nums):
+            if next_index >= len(nums):
+                break
             if nums[index] != nums[next_index]:
                 next_index = next_index + 1    
                 index = index + 1            
             else:
                 nums.pop(index)  
-            if next_index >= len(nums):
-                break
+
         print(nums)
         return len(nums)
 
 #nums = [1,1,2,2,3,3,4]
 #nums = [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 5]
-nums = []
+nums = [1]
 rtype = Solution.removeDuplicates(None, nums)
 print(rtype)
